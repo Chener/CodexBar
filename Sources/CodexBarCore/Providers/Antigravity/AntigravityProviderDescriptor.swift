@@ -533,7 +533,8 @@ struct AntigravityCLIHTTPSFetchStrategy: ProviderFetchStrategy {
         } catch {
             try Task.checkCancellation()
             if error is CancellationError { throw error }
-            // Identity-free reports must not replace a selected or injected OAuth account's fallback.
+            // Identity-free reports must not replace a selected or injected OAuth account's fallback here;
+            // AntigravityOAuthFetchStrategy re-consults the report only after matching the local agy login.
             guard context.sourceMode != .auto || (context.selectedTokenAccountID == nil &&
                 context.env[AntigravityOAuthCredentialsStore.environmentCredentialsKey] == nil)
             else { throw error }
