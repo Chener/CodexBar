@@ -5,7 +5,7 @@
 ### Fixed
 - Kimi: accept ratio-pool Code API responses, preserve absent weekly quotas, and show the reported monthly Total usage without browser authentication (#3694). Thanks @eliasburlison!
 - Cursor costs: stop immediate retry loops when fetched credentials remain unconfirmed, retain account ownership checks, and retry real account or cost-settings changes (related to #3249).
-- Sharing: use the last included reporting day and dashboard timezone in images and copied text, and label a single subscription correctly (#3692, related to #3704). Thanks @Chipagosfinest!
+- Sharing: label usage snapshots with the last included reporting day and preserve the dashboard timezone in images and copied text (#3692). Thanks @Chipagosfinest!
 - Antigravity history: skip unrelated SQLite databases without withholding valid usage, while keeping foreign-only roots unavailable and unsupported schemas incomplete (#3699). Thanks @urda!
 - Antigravity: skip the futile managed-server readiness wait on CSRF-gated `agy` versions and reach supported usage reports sooner, preserving account selection and warm-session ownership (#3685, related to #3586). Thanks @Niclassslua!
 - Copilot: show configured seat-credit progress in Automatic provider tabs when no metered quota window is available, preserving explicit metric choices (#3681). Thanks @KSEGIT!
@@ -19,6 +19,7 @@
 - Agent sessions: preserve case-sensitive SSH usernames when deduplicating remote hosts (related to #3538 and #3545). Thanks @ECuteri!
 - Claude costs: exclude preliminary proxy estimates without final usage, retain known subtotals with incomplete markers across menus, charts, CLI, and exports, and rebuild older cached estimates (#3688). Thanks @MoridinBG!
 - Antigravity: preserve useful earlier source errors when an unavailable final source stops fallback, while keeping cancellation and later substantive errors authoritative (related to #3683). Thanks @hhh2210!
+- Sharing: label a single included subscription correctly on shared usage cards (related to #3704). Thanks @Chipagosfinest!
 
 ## 0.60.4 — 2026-09-16
 
